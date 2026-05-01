@@ -1,0 +1,128 @@
+.sticky-top-menu {
+  display: flex;
+  align-items: center;
+  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  flex-shrink: 0;
+}
+
+.sticky-top-menu .container {
+  border: 1px solid var(--border-base);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+}
+
+.sticky-top-menu .profile-container {
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-base);
+  border-radius: 12px;
+  height: 68px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 16px 20px;
+}
+
+.sticky-top-menu .profile-info {
+  display: flex;
+  flex-direction: column;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+}
+
+.sticky-top-menu .profile-info p:first-child {
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.sticky-top-menu .profile-info p:last-child {
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.sticky-top-menu .social-links {
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-base);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  padding: 16px 20px;
+}
+
+.sticky-top-menu .social-link {
+  display: flex;
+  align-items: center;
+  padding: 4px 0;
+  color: var(--text-link);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.sticky-top-menu .menu-btn-container {
+  background-color: var(--surface-primary);
+  border: 1px solid var(--border-base);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+}
+
+.sticky-top-menu .primary-btn, .sticky-top-menu .secondary-btn {
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 224px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.45;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.sticky-top-menu .primary-btn {
+  background-color: var(--primary-btn-default);
+}
+
+.sticky-top-menu .secondary-btn {
+  background-color: var(--secondary-btn-default);
+  color: white;
+}
+
+.sticky-top-menu .arrow-up-right {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.sticky-top-menu .arrow-up-right img {
+  width: 100%;
+  height: 100%;
+}
+
+.sticky-top-menu .logo {
+  width: 38px;
+  height: 35px;
+  position: relative;
+}
+
+.sticky-top-menu .logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
