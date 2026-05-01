@@ -33,6 +33,12 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  body {
+    padding-top: 112px;
+  }
+}
+
 .sticky-top-menu {
   position: sticky;
   top: 0;
