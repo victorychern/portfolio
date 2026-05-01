@@ -204,6 +204,7 @@
       });
   </script>
   <script src="script.js"></script>
+ 
   <script>
   fetch('sticky-top-menu.html')
     .then(response => response.text())
@@ -213,15 +214,39 @@
       const mobileTopBar = document.querySelector('.mobile-top-bar');
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
 
-      if (mobileTopBar && mobileMenuToggle) {
-        mobileMenuToggle.addEventListener('click', function () {
-          mobileTopBar.classList.toggle('is-open');
+      if (!mobileTopBar || !mobileMenuToggle) return;
 
-          const isOpen = mobileTopBar.classList.contains('is-open');
-          mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-          mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
-        });
-      }
+      mobileMenuToggle.addEventListener('click', function () {
+        mobileTopBar.classList.toggle('is-open');
+
+        const isOpen = mobileTopBar.classList.contains('is-open');
+        mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+      });
+
+      let lastScrollY = window.scrollY;
+      const scrollThreshold = 10;
+
+      window.addEventListener('scroll', () => {
+        const currentScrollY = window.scrollY;
+        const diff = currentScrollY - lastScrollY;
+
+        if (mobileTopBar.classList.contains('is-open')) {
+          mobileTopBar.classList.remove('is-hidden');
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        if (currentScrollY <= 20) {
+          mobileTopBar.classList.remove('is-hidden');
+        } else if (diff > scrollThreshold) {
+          mobileTopBar.classList.add('is-hidden');
+          lastScrollY = currentScrollY;
+        } else if (diff < -scrollThreshold) {
+          mobileTopBar.classList.remove('is-hidden');
+          lastScrollY = currentScrollY;
+        }
+      });
     });
 
   fetch('footer.html')
@@ -230,5 +255,6 @@
       document.getElementById('footer-placeholder').innerHTML = data;
     });
 </script>
+
 </body>
 </html>
