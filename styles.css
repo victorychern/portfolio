@@ -22,36 +22,48 @@
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0 8px;
   font-family: 'IBM Plex Sans', sans-serif;
   background-color: var(--surface-bg);
   color: var(--text-primary);
   display: flex;
-  gap: 16px;
   justify-content: center;
-  /* align-items: flex-start; */
+  align-items: flex-start;
+  gap: 16px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
-@media (max-width: 768px) {
-  body {
-    padding-top: 112px;
+
+#sticky-top-menu-placeholder {
+  flex: 0 0 240px;
+  width: 240px;
+}
+
+@media (max-width: 1024px) {
+  #sticky-top-menu-placeholder {
+    flex: 0 0 220px;
+    width: 220px;
   }
 }
 
 .sticky-top-menu {
   position: sticky;
-  top: 0;
+  top: 24px;
+  width: 240px;
   flex-shrink: 0;
 }
+
 
 .content-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  flex: 1 1 0;
+  min-width: 0;
+  width: 100%;
+  max-width: 900px;
   padding: 24px 0;
-  flex-shrink: 0;
-  width: 900px;
 }
 
 .case-card {
@@ -136,6 +148,7 @@ body {
   margin: 0;
 }
 
+
 .footer {
   background-color: var(--surface-primary);
   border: 1px solid var(--border-base);
@@ -152,8 +165,41 @@ body {
   color: var(--text-secondary);
   text-align: center;
   white-space: nowrap;
-  width: 900px;
+  width: 100%;
+  max-width: 100%;
+
 }
+
+@media (max-width: 1024px) {
+  #sticky-top-menu-placeholder {
+    flex: 0 0 220px;
+    width: 220px;
+  }
+
+  .sticky-top-menu {
+    width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 112px;
+  }
+
+  #sticky-top-menu-placeholder {
+    flex: 0 0 0;
+    width: 0;
+    min-width: 0;
+    overflow: visible;
+  }
+
+  .content-container {
+    max-width: 100%;
+    padding: 24px 0;
+  }
+}
+
+  
 
 .concepts {
   background-color: var(--surface-primary);
