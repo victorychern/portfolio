@@ -3,7 +3,7 @@
 :root {
   --surface-bg: #0d0d0d;
   --surface-primary: #151515;
-  --surface-secondary: #1f1f1f;
+  --surface-secondary: #1e1e1e;
   --surface-bage: #212121;
   --border-base: #212121;
   --border-bage: #525252;
@@ -11,7 +11,9 @@
   --text-secondary: #a8a8a8;
   --text-link: #868686;
   --primary-btn-default: #0914e3;
+  --primary-btn-hover: #0C15C0;
   --secondary-btn-default: #252525;
+  --secondary-btn-hover: #212121;
 }
 
 * {
@@ -27,7 +29,7 @@ body {
   display: flex;
   gap: 16px;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   min-height: 100vh;
 }
 
@@ -75,8 +77,14 @@ body {
   align-items: center;
 }
 
-.case-card-header .container {
-  display: flex;
+.case-card-header-desc {
+  display: inline;
+  gap: 8px;
+  align-items: center;
+}
+
+.case-card-header .case-card-header-desc {
+  display:inline;
   gap: 8px;
   align-items: center;
   font-family: 'IBM Plex Mono', monospace;
@@ -177,9 +185,21 @@ body {
   background-color: var(--surface-secondary);
   border-radius: 6px;
   padding: 24px;
+  gap: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+}
+
+.case-card-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.case-card-container > * {
+  flex: 1;
 }
 
 .case-card-img-480 {
@@ -188,23 +208,37 @@ body {
   position: relative;
 }
 
+.video-container {
+   height: 480px;;
+   width: 240px;
+}
+
+.video-container video {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
 .case-card-img-480 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.case-card-img-245 {
+/* .case-card-img-245 {
   width: 245px;
   height: 245px;
   position: relative;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-}
+} */
 
 .case-card-img-245 img {
-  width: 100%;
-  height: 100%;
+  width: 245px;
+  height: 245px;
   object-fit: cover;
+  display: block;
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25) */
 }
 
 .case-card-img-fill {
@@ -220,8 +254,15 @@ body {
   border-radius: 6px;
 }
 
-.concepts .container {
+.concepts .experiments-container {
   display: flex;
   flex-direction: column;
   gap: 32px;
+}
+
+.skill-item-container {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  flex-wrap: wrap;
 }
