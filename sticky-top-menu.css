@@ -318,6 +318,10 @@
   height: 32px;
 }
 
+.mobile-social-link:hover {
+  color: var(--text-primary);
+}
+
 .mobile-menu-buttons {
   display: flex;
   flex-direction: column;
