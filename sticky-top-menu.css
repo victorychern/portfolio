@@ -27,6 +27,18 @@
   padding: 0;
 }
 
+.profile-top-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.profile-top-link {
+  /* transform: translateY(-2px);
+  transition: 0.3s ease; */
+  cursor: pointer;
+}
+
 .profile-top {
   display: flex;
   align-items: center;
@@ -149,6 +161,17 @@
   border-radius: 12px;
 }
 
+.mobile-profile-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.mobile-profile-link {
+  /* transform: translateY(-2px);
+  transition: 0.3s ease; */
+  cursor: pointer;
+}
 
 .mobile-profile {
   display: flex;
@@ -156,6 +179,7 @@
   gap: 12px;
   min-width: 0;
 }
+
 
 .mobile-logo {
   width:  38px;
