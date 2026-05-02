@@ -180,8 +180,8 @@ h1 {
 .mini-paragraph h3 {
   margin: 0;
   font-weight: 500;
-  font-size: 18px;
-  line-height: 1.2;
+  font-size: 16px;
+  line-height: 1.45;
   color: var(--text-primary);
 }
 
@@ -458,14 +458,14 @@ display: block;
 }
 
 .section-label {
-  margin: 0 0 8px;
+  margin: 0;
   color: var(--text-secondary);
   font-family: 'IBM Plex Sans', sans-serif;
   font-size: 16px;
 }
 
 .section-title {
-  margin: 0 0 12px;
+  margin: 0;
   font-family: 'IBM Plex Sans', sans-serif;
   font-weight: 500;
   font-size: 22px;
@@ -486,7 +486,7 @@ display: block;
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 16px;
+  margin-top: 0;
 }
 
 .list-item {
@@ -501,11 +501,21 @@ display: block;
   color: var(--text-secondary);
 }
 
-.design-block {
+
+/* .middle-paragraph-title {
+  margin: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-primary);
+} */
+
+/* .design-block {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: ;
 }
 
 .design-block-title {
@@ -515,7 +525,7 @@ display: block;
   font-size: 16px;
   line-height: 1.45;
   color: var(--text-primary);
-}
+} */
 
 .design-row {
   display: grid;
@@ -528,7 +538,7 @@ display: block;
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
-  margin-top: 16px;
+  margin-top: 0px;
 }
 
 .result-card {
