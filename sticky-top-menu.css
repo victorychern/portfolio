@@ -155,7 +155,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 16px 12px;
+  padding: 16px 16px;
   background-color: #161616;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 12px;
@@ -315,7 +315,7 @@
   text-decoration: none;
   font-size: 16px;
   line-height: 1.45;
-  height: 32px;
+  padding: 12px 0 12px 0;
 }
 
 .mobile-social-link:hover {
@@ -356,7 +356,8 @@
 
   .btn-primary,
   .btn-secondary {
-    height: 52px;
+    height: 64px;
+    border-radius: 8px;
   }
   
 }
