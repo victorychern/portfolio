@@ -14,7 +14,10 @@
   --primary-btn-hover: #0c15c0;
   --secondary-btn-default: #252525;
   --secondary-btn-hover: #212121;
+  --content-max-width: 900px;
+  --page-gutter: 8px;
 }
+
 
 * {
   box-sizing: border-box;
@@ -59,8 +62,8 @@ p {
 .content-container {
   flex: 1 1 0;
   min-width: 0;
-  width: 100%;
-  max-width: 900px;
+  width: min(100%, var(--content-max-width));
+  max-width: var(--content-max-width);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -402,17 +405,19 @@ h1 {
   }
 
   #sticky-top-menu-placeholder {
-    width: 100%;
+    width: min(calc(100vw - var(--page-gutter) * 2), var(--content-max-width));
     min-width: 0;
     flex: none;
     position: static;
     top: auto;
     height: auto;
+    margin: 0 auto;
   }
 
   .content-container {
-    width: 100%;
-    max-width: 100%;
+    width: min(calc(100vw - var(--page-gutter) * 2), var(--content-max-width));
+    max-width: none;
+    margin: 0 auto;
     padding: 24px 0;
   }
 

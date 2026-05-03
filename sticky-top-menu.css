@@ -341,18 +341,23 @@
     display: block;
     position: fixed;
     top: 12px;
-    left: 8px;
-    right: 8px;
+    left: 50%;
+    width: min(calc(100vw - var(--page-gutter) * 2), var(--content-max-width));
     z-index: 1000;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
     opacity: 1;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  .mobile-top-bar.is-hidden {
-    transform: translateY(-120%);
+   .mobile-top-bar.is-hidden {
+    transform: translateX(-50%) translateY(-120%);
     opacity: 0;
     pointer-events: none;
+  }
+
+   .mobile-top-card,
+   .mobile-dropdown-menu {
+    width: 100%;
   }
 
   .btn-primary,
