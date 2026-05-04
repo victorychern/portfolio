@@ -388,8 +388,9 @@ h1 {
 
   .video-container {
     height: 360px;
-    width: 176px;
-    border-radius: 100px;
+    width: 180px;
+    border-radius: 32px;
+    overflow: hidden;
   }
 
 
