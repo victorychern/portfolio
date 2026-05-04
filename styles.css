@@ -388,7 +388,10 @@ h1 {
 
   .video-container {
     height: 360px;
+    width: 176px;
+    border-radius: 100px;
   }
+
 
   .case-card-img-480,
   .case-card-img-480.screen-switcher {
