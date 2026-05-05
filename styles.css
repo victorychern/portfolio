@@ -254,6 +254,7 @@ h1 {
 @media (max-width: 860px) {
   .concept-cards {
     flex-direction: column;
+    gap: 32px;
   }
 }
 
