@@ -146,8 +146,33 @@
   flex-shrink: 0;
 }
 
+.mobile-menu-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+
 .mobile-top-bar {
   display: none;
+  z-index: 1000;
+
+}
+
+body.menu-open {
+  overflow: hidden;
+  touch-action: none;
+}
+
+body.menu-open .mobile-menu-backdrop {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .mobile-top-card {
@@ -367,3 +392,4 @@
   }
   
 }
+

@@ -269,15 +269,44 @@
 
       const mobileTopBar = document.querySelector('.mobile-top-bar');
       const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileBackdrop = document.querySelector('.mobile-menu-backdrop');
+      const mobileMenuLinks = document.querySelectorAll(
+        '.mobile-dropdown-menu a'
+      );
 
-      if (!mobileTopBar || !mobileMenuToggle) return;
+      if (!mobileTopBar || !mobileMenuToggle || !mobileBackdrop) return;
 
-      mobileMenuToggle.addEventListener('click', function () {
-        mobileTopBar.classList.toggle('is-open');
+      function openMenu() {
+        mobileTopBar.classList.add('is-open');
+        document.body.classList.add('menu-open');
+        mobileMenuToggle.setAttribute('aria-expanded', 'true');
+        mobileMenuToggle.setAttribute('aria-label', 'Закрыть меню');
+      }
 
+      function closeMenu() {
+        mobileTopBar.classList.remove('is-open');
+        document.body.classList.remove('menu-open');
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        mobileMenuToggle.setAttribute('aria-label', 'Открыть меню');
+      }
+
+      function toggleMenu() {
         const isOpen = mobileTopBar.classList.contains('is-open');
-        mobileMenuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        mobileMenuToggle.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+        isOpen ? closeMenu() : openMenu();
+      }
+
+      mobileMenuToggle.addEventListener('click', toggleMenu);
+
+      mobileBackdrop.addEventListener('click', closeMenu);
+
+      mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+        }
       });
 
       let lastScrollY = window.scrollY;
