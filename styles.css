@@ -625,6 +625,21 @@ display: block;
   cursor: ew-resize;
 }
 
+.before-after-slider--mobile {
+  display: none;
+  aspect-ratio: 866 / 650;
+}
+
+@media (max-width: 860px) {
+  .before-after-slider--desktop {
+    display: none;
+  }
+
+  .before-after-slider--mobile {
+    display: block;
+  }
+}
+
 .before-after-slider img {
   position: absolute;
   inset: 0;
