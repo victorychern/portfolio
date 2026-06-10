@@ -633,7 +633,6 @@ display: block;
   object-fit: cover;
   display: block;
   pointer-events: none;
-  transform: scale(1.02);
 }
 
 .before-after-handle {
