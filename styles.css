@@ -105,6 +105,10 @@ p {
   object-fit: cover;
 }
 
+.case-card-image--proxyjam-mobile {
+  aspect-ratio: 2598 / 1686;
+}
+
 .case-card-header {
   display: flex;
   justify-content: space-between;
