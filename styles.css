@@ -109,6 +109,24 @@ p {
   aspect-ratio: 2598 / 1686;
 }
 
+.case-card-image-container.case-card-image-mobile {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  .case-card-image--proxyjam-mobile {
+    display: none;
+  }
+
+  .case-card-image-container.case-card-image-mobile {
+    display: flex;
+  }
+
+  .case-card-image-container.case-card-image-container--hide-mobile {
+    display: none;
+  }
+}
+
 .case-card-header {
   display: flex;
   justify-content: space-between;
