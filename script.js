@@ -114,6 +114,20 @@ const HOVER_CTA_TEXT = 'ПОСМОТРЕТЬ ПРОЕКТ';
 const HOVER_CTA_TYPE_INTERVAL = 35;
 const HOVER_CTA_OFFSET = 16;
 
+// Tracked globally (once) so it survives pjax content swaps and always
+// reflects the real cursor position - some browsers fire a synthetic
+// mouseenter with stale/zeroed coordinates right after the DOM under the
+// cursor changes, which would otherwise place the badge at the top-left.
+let lastMouseX = 0;
+let lastMouseY = 0;
+let hasMousePosition = false;
+
+document.addEventListener('mousemove', (event) => {
+  lastMouseX = event.clientX;
+  lastMouseY = event.clientY;
+  hasMousePosition = true;
+}, { passive: true });
+
 function initHoverCta(root) {
   root.querySelectorAll('.case-card-link').forEach((link) => {
     const cta = link.querySelector('.hover-cta');
@@ -149,7 +163,9 @@ function initHoverCta(root) {
 
     link.addEventListener('mouseenter', (event) => {
       resetAnimation();
-      moveTo(event.clientX, event.clientY);
+      const x = hasMousePosition ? lastMouseX : event.clientX;
+      const y = hasMousePosition ? lastMouseY : event.clientY;
+      moveTo(x, y);
       typeTimeoutId = setTimeout(() => typeNextChar(0), HOVER_CTA_TYPE_INTERVAL);
     });
 
