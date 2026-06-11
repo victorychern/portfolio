@@ -134,6 +134,7 @@ function initHoverCta(root) {
     if (!cta) return;
 
     const textEl = cta.querySelector('.hover-cta-text');
+    const cursorEl = cta.querySelector('.hover-cta-cursor');
     const dotsEl = cta.querySelector('.hover-cta-dots');
     const arrowEl = cta.querySelector('.hover-cta-arrow');
 
@@ -144,6 +145,7 @@ function initHoverCta(root) {
       textEl.textContent = '';
       dotsEl.classList.remove('is-hidden');
       arrowEl.classList.remove('is-visible');
+      cursorEl.classList.remove('is-visible');
     }
 
     function typeNextChar(index) {
@@ -152,6 +154,7 @@ function initHoverCta(root) {
         typeTimeoutId = setTimeout(() => typeNextChar(index + 1), HOVER_CTA_TYPE_INTERVAL);
       } else {
         dotsEl.classList.add('is-hidden');
+        cursorEl.classList.remove('is-visible');
         arrowEl.classList.add('is-visible');
       }
     }
@@ -166,6 +169,7 @@ function initHoverCta(root) {
       const x = hasMousePosition ? lastMouseX : event.clientX;
       const y = hasMousePosition ? lastMouseY : event.clientY;
       moveTo(x, y);
+      cursorEl.classList.add('is-visible');
       typeTimeoutId = setTimeout(() => typeNextChar(0), HOVER_CTA_TYPE_INTERVAL);
     });
 
