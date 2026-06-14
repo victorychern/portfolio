@@ -521,6 +521,37 @@ h1 {
   max-width: 100%;
 }
 
+/* Skeleton placeholder shown while images/videos are loading. */
+.media-loading {
+  background-color: var(--surface-secondary);
+  border-radius: 6px;
+  animation: media-skeleton-pulse 1.6s ease-in-out infinite;
+}
+
+.case-card-img-fill:has(> .media-loading) {
+  aspect-ratio: 16 / 10;
+}
+
+.case-card-img-fill > .media-loading {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes media-skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .media-loading {
+    animation: none;
+  }
+}
+
 @media (max-width: 860px) {
   .concept-cards {
     flex-direction: column;

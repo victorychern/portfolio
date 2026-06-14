@@ -245,12 +245,38 @@ function initBeforeAfterSliders(root) {
   });
 }
 
+const MEDIA_PLACEHOLDER_MIN_SIZE = 48;
+
+function initMediaPlaceholders(root) {
+  root.querySelectorAll('img, video').forEach((el) => {
+    const isVideo = el.tagName === 'VIDEO';
+    const isReady = isVideo
+      ? el.readyState >= 2
+      : el.complete && el.naturalWidth > 0;
+
+    if (isReady) return;
+
+    const isFillTarget = el.parentElement && el.parentElement.classList.contains('case-card-img-fill');
+    if (!isFillTarget) {
+      const rect = el.getBoundingClientRect();
+      if (rect.width < MEDIA_PLACEHOLDER_MIN_SIZE || rect.height < MEDIA_PLACEHOLDER_MIN_SIZE) return;
+    }
+
+    el.classList.add('media-loading');
+
+    const clearPlaceholder = () => el.classList.remove('media-loading');
+    el.addEventListener(isVideo ? 'loadeddata' : 'load', clearPlaceholder, { once: true });
+    el.addEventListener('error', clearPlaceholder, { once: true });
+  });
+}
+
 function initContent(root) {
   runCleanups();
   loadFooter(root);
   initHoverCta(root);
   initScreenSwitchers(root);
   initBeforeAfterSliders(root);
+  initMediaPlaceholders(root);
   revealContent(root);
 }
 
