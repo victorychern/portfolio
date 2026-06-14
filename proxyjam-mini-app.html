@@ -42,7 +42,7 @@
      <div class="paragraph">
         <p class="section-label">01.</p>
         <h2 class="section-title">О&nbsp;проекте</h2>
-        <p class="section-text">Разработала дизайн мобильного Telegram Mini App для ProxyJam&nbsp;— сервиса по продаже прокси. Спроектировала сценарии выбора типа прокси, оформления заказа с&nbsp;оплатой через Telegram Stars, управления списком прокси с&nbsp;фильтрацией и&nbsp;поиском, а&nbsp;также экраны профиля с&nbsp;историей заказов. Создала UI-кит и&nbsp;переработала визуальный стиль с&nbsp;нуля, заложив поддержку светлой и&nbsp;тёмной тем.</p>
+        <p class="section-text">Разработала дизайн мобильного Telegram Mini App для ProxyJam&nbsp;— сервиса для покупки прокси. Спроектировала сценарии выбора типа прокси, оформления заказа с&nbsp;оплатой через звёзды Telegram, управления списком прокси с&nbsp;фильтрацией и&nbsp;поиском, а&nbsp;также экраны профиля с&nbsp;историей заказов. Создала UI-кит и&nbsp;переработала визуальный стиль с&nbsp;нуля, заложив поддержку светлой и&nbsp;тёмной тем.</p>
      </div>
     </section>
 
@@ -61,11 +61,11 @@
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Поддержать оплату через нативный для Telegram механизм&nbsp;— Telegram Stars.</p>
+          <p>Поддержать оплату через нативный способ для Telegram&nbsp;— звёзды.</p>
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Обеспечить корректную работу в&nbsp;светлой и&nbsp;тёмной теме.</p>
+          <p>Настроить светлую и&nbsp;тёмную темы через переменные.</p>
         </div>
       </div>
     </div>
@@ -82,7 +82,7 @@
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Разработка нового визуального языка и&nbsp;UI-кита.</p>
+          <p>Разработка нового UI-кита.</p>
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
@@ -100,7 +100,7 @@
     </div>
     </section>
 
-    <section class="case-card">
+    <!-- <section class="case-card">
     <div class="paragraph">
       <p class="section-label">04.</p>
       <h2 class="section-title">Почему не просто адаптация веб-версии</h2>
@@ -108,11 +108,11 @@
       <div class="section-list">
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Отсутствие поддержки тёмной темы. Дизайн-система веб-версии строилась под светлый фон&nbsp;— цвета, тени и&nbsp;компоненты не предполагали инверсии. Telegram же по умолчанию поддерживает тёмную тему на уровне платформы, и&nbsp;пользователи ожидают, что приложение следует системным настройкам. Переписать существующий UI-кит под оба режима оказалось бы дороже, чем создать новый с&nbsp;нуля с&nbsp;поддержкой токенов для Light/Dark.</p>
+          <p>Отсутствие поддержки тёмной темы. Дизайн-система веб-версии строилась под светлый фон&nbsp;— цвета, тени и&nbsp;компоненты не предполагали инверсии. В Telegram же пользователи ожидают, что приложение следует системным настройкам.</p>
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Несовместимость компонентной базы. Веб-компоненты (модальные окна, таблицы, выпадающие списки) плохо переносятся на мобильный экран: таблица с&nbsp;прокси из веба при переносе «один в&nbsp;один» становилась нечитаемой на 375px. Потребовался полный пересмотр паттернов в&nbsp;сторону нативных мобильных: bottom sheets, swipe-действия, floating tab bar.</p>
+          <p>Несовместимость компонентной базы. Веб-компоненты (модальные окна, таблицы, выпадающие списки) плохо переносятся на мобильный экран: таблица с&nbsp;прокси становилась нечитаемой на 375px. Потребовался полный пересмотр паттернов в&nbsp;сторону нативных мобильных: bottom sheets, swipe-действия, floating tab bar.</p>
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
@@ -120,8 +120,33 @@
         </div>
         <div class="list-item">
           <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Изменение платёжной механики. Веб-версия работала с&nbsp;классическими способами оплаты. Mini App ориентирован на Telegram Stars&nbsp;— это потребовало переработки экранов заказа.</p>
+          <p>Изменение платёжной механики. Веб-версия работала с&nbsp;классическими способами оплаты. Mini App ориентирован на звёзды Telegram&nbsp;— это потребовало переработки экранов заказа.</p>
         </div>
+      </div>
+    </div>
+    </section> -->
+
+    <section class="case-card">
+    <div class="paragraph">
+      <p class="section-label">04.</p>
+      <h2 class="section-title">Ограничения и&nbsp;сложности</h2>
+      <div class="section-list">
+        <div class="list-item">
+          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
+          <p>Невозможность напрямую перенести мобильную версию. В приложении отличается навигация и&nbsp;логика оплаты, кроме того необходимо было добавить тёмную тему для пользователей, которые используют тёмную тему Telegram.</p>
+        </div>
+        <div class="list-item">
+          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
+          <p>Согласованность с&nbsp;веб-версией. Несмотря на обновлённый визуал, логика сценариев и&nbsp;терминология должны были оставаться узнаваемыми для пользователей, которые уже знакомы с&nbsp;сервисом.</p>
+        </div>
+        <div class="list-item">
+          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
+          <p>Неполная информация. Часть данных (список провайдеров, доступных стран) на момент работы ещё не была окончательно определена на бэкенде, поэтому часть полей проектировалась с&nbsp;расчётом на динамические данные.</p>
+        </div>
+        <!-- <div class="list-item">
+          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
+          <p>Платёжный сценарий через звёзды. Это относительно новый платёжный инструмент, и&nbsp;нужно было спроектировать понятный UI для пользователей, которые могут не знать, как работает этот механизм оплаты.</p>
+        </div> -->
       </div>
     </div>
     </section>
@@ -129,71 +154,46 @@
     <section class="case-card">
     <div class="paragraph">
       <p class="section-label">05.</p>
-      <h2 class="section-title">Ограничения и&nbsp;сложности</h2>
-      <div class="section-list">
-        <div class="list-item">
-          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Ограничения Telegram WebView. Mini App работает в&nbsp;WebView внутри мессенджера, что накладывает технические ограничения: специфика отображения, жёсткая зависимость от нативных элементов Telegram (header, кнопки закрытия/навигации). Часть привычных веб-паттернов просто не работала.</p>
-        </div>
-        <div class="list-item">
-          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Согласованность с&nbsp;веб-версией. Приложение существует параллельно с&nbsp;веб-версией, поэтому несмотря на обновлённый визуал, логика сценариев и&nbsp;терминология должны были оставаться узнаваемыми для пользователей, которые уже знакомы с&nbsp;сервисом.</p>
-        </div>
-        <div class="list-item">
-          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Неопределённость по провайдерам. Часть данных (список провайдеров, доступных стран) на момент работы ещё не была окончательно определена на бэкенде, поэтому часть полей проектировалась с&nbsp;расчётом на динамические данные.</p>
-        </div>
-        <div class="list-item">
-          <img src="src/double-right.svg" alt="Bullet" class="list-item-icon"/>
-          <p>Платёжный сценарий через Stars. Telegram Stars&nbsp;— относительно новый платёжный инструмент, и&nbsp;нужно было спроектировать понятный UI для пользователей, которые могут не знать, как работает этот механизм оплаты.</p>
-        </div>
-      </div>
-    </div>
-    </section>
-
-    <section class="case-card">
-    <div class="paragraph">
-      <p class="section-label">06.</p>
       <h2 class="section-title">Дизайн</h2>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Главный экран</h3>
-          <p class="section-text">Главный экран отличается для нового и&nbsp;активного пользователя. Новому показывается промо-баннер с&nbsp;промокодом на первый заказ и&nbsp;карточка с&nbsp;нулевыми прокси с&nbsp;призывом сделать заказ. Активному&nbsp;— карточки с&nbsp;текущими прокси, счётчики использования трафика и&nbsp;интерактивный график потребления по дням, неделям или месяцам.</p>
+          <p class="section-text">Новому пользователю показывается промо-баннер с&nbsp;промокодом на первый заказ. Активному&nbsp;— карточки с&nbsp;текущими прокси, счётчики использования трафика и&nbsp;график потребления по дням, неделям или месяцам.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/main-screen.png" alt="Главный экран"/></div>
       </div>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Выбор типа прокси</h3>
-          <p class="section-text">При нажатии «Order proxy» открывается экран выбора типа прокси. Каждый тип оформлен как отдельная карточка с&nbsp;иллюстрацией и&nbsp;описанием, свайп переключает между ними. Ниже&nbsp;— список ключевых преимуществ и&nbsp;кнопка оформления заказа.</p>
+          <p class="section-text">При нажатии «Order proxy» или самой правой кнопки на таб-баре открывается экран выбора типа прокси. Каждый тип оформлен как отдельная карточка с&nbsp;иллюстрацией и&nbsp;описанием, свайп переключает между ними. Ниже находится список ключевых преимуществ и&nbsp;кнопка оформления заказа.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/order-cards.png" alt="Выбор типа прокси"/></div>
       </div>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Форма заказа</h3>
-          <p class="section-text">Форма заказа собрана на одном экране: тип прокси в&nbsp;шапке, параметры (страна, город, провайдер, период) через bottom sheets, переключатель автопродления, цена в&nbsp;Telegram Stars и&nbsp;слайдер количества IP. Всё сделано в&nbsp;один шаг&nbsp;— без дополнительных страниц и&nbsp;редиректов.</p>
+          <p class="section-text">Собрана на одном экране: тип прокси в&nbsp;шапке, параметры (страна, город, провайдер, период) через bottom sheets, переключатель автопродления, цена в&nbsp;звёздах и&nbsp;слайдер количества IP. Всё сделано в&nbsp;один шаг, без дополнительных страниц и&nbsp;редиректов.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/order-form.png" alt="Форма заказа"/></div>
       </div>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Список прокси</h3>
-          <p class="section-text">Экран списка прокси разбит по вкладкам типов (Residential ISP / Rotating Mobile). Сверху&nbsp;— фильтр по статусу (All / Active / Expires / Inactive), поиск и&nbsp;кнопка фильтров. Каждая строка показывает IP:порт, флаг страны, статус и&nbsp;протокол. Справа&nbsp;— тоггл авто-продления.</p>
+          <p class="section-text">Наверху экрана находятся вкладки с типами прокси и статусами. При долгом нажатии можно управлять списком прокси, менять протокол, автопродление, удалить, подключить к Telegram, посмотреть более детальную информацию о прокси.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/proxy-list.png" alt="Список прокси"/></div>
       </div>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Страница поиска (найдено по фильтру)</h3>
-          <p class="section-text">При применении фильтра интерфейс отображает количество найденных результатов с&nbsp;возможностью сбросить фильтр. Поиск работает поверх всего содержимого таблицы.</p>
+          <p class="section-text">При применении фильтра интерфейс отображает количество найденных результатов с&nbsp;возможностью сбросить фильтр.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/filter.png" alt="Страница поиска"/></div>
       </div>
       <div class="middle-paragraph">
         <div class="mini-paragraph">
           <h3 class="mini-paragraph">Профиль</h3>
-          <p class="section-text">Профиль отображает Telegram-никнейм пользователя и&nbsp;аватар, взятый из аккаунта. Настройки минимальные&nbsp;— история заказов, смена темы и&nbsp;языка. Переключение темы реализовано через bottom sheet с&nbsp;тремя вариантами: Light / Dark / System.</p>
+          <p class="section-text">Профиль отображает Telegram-никнейм пользователя и&nbsp;аватар, взятый из аккаунта. Настройки минимальные&nbsp;— история заказов, смена темы и&nbsp;языка. Переключение темы реализовано через bottom sheet.</p>
         </div>
         <div class="case-card-img-fill"><img src="src/proxyjam-mini-app/profile.png" alt="Профиль"/></div>
       </div>
@@ -222,7 +222,7 @@
 
     <section class="case-card">
     <div class="paragraph">
-      <p class="section-label">07.</p>
+      <p class="section-label">06.</p>
       <h2 class="section-title">Результаты</h2>
       <div class="result-cards">
         <div class="result-card">
@@ -241,7 +241,7 @@
           <p class="result-description">Выбор прокси → заказ → управление списком → история → профиль, включая служебные состояния.</p>
         </div>
       </div>
-      <p class="section-text">В&nbsp;результате спроектировано мобильное приложение, которое сохраняет логику и&nbsp;терминологию веб-версии, при этом работает органично внутри Telegram: использует нативные паттерны мобильного интерфейса, поддерживает платёжную систему Stars и&nbsp;полностью адаптировано под обе системные темы.</p>
+      <p class="section-text">В&nbsp;результате спроектировано мобильное приложение, которое сохраняет логику и&nbsp;терминологию веб-версии, при этом работает органично внутри Telegram: использует нативные паттерны мобильного интерфейса, поддерживает платёжную систему звёзд Telegram и&nbsp;полностью адаптировано под обе системные темы.</p>
     </div>
     </section>
 
