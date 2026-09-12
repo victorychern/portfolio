@@ -756,6 +756,16 @@ display: block;
   color: var(--text-primary);
 }
 
+.highlight-link {
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.highlight-link:hover {
+  text-decoration: underline;
+  opacity: 0.75;
+}
+
 .results-two-columns .result-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
